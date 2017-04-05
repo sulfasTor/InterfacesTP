@@ -22,7 +22,7 @@ function varargout = test(varargin)
 
 % Edit the above text to modify the response to help test
 
-% Last Modified by GUIDE v2.5 28-Mar-2017 16:38:58
+% Last Modified by GUIDE v2.5 04-Apr-2017 15:56:19
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -61,13 +61,6 @@ guidata(hObject, handles);
 % UIWAIT makes test wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
-clear A age;
-set(handles.edit1, 'String', 'Mettez votre age ici')
-set(handles.edit2, 'String', 'Mettez votre taille ici')
-% fig = figure;
-% uipanel1 = uipanel(fig,'Title','Fenetre2','FontSize',12,...
-%                 'BackgroundColor','red');
-
 
 % --- Outputs from this function are returned to the command line.
 function varargout = test_OutputFcn(hObject, eventdata, handles) 
@@ -85,85 +78,29 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-clear age;
-global age;
-set(handles.text2, 'String', str2double(age))
 
 global A;
-global box1;
-delete box1
-if(isempty(A))
-    box1 = msgbox('Veillez selectionner un fichier');
+global h;
+
+if (~isempty(h))
+    delete(h);
+end
+
+if(isempty(A))   
+    h = msgbox('Veillez selectionner un fichier','Alerte', 'warn');
 else
-    
-    axe1 = plot(A);
-    grid on
+    axes(handles.axes1)
+    plotTt(A); % Tracage de DL en fonction de la temperature
+  
 end
-
-
-
-function edit1_Callback(hObject, eventdata, handles)
-% hObject    handle to edit1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edit1 as text
-%        str2double(get(hObject,'String')) returns contents of edit1 as a double
-clear age;
-age = get(handles.edit1, 'String');
-
-
-% --- Executes during object creation, after setting all properties.
-function edit1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-function edit2_Callback(hObject, eventdata, handles)
-% hObject    handle to edit2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edit2 as text
-%        str2double(get(hObject,'String')) returns contents of edit2 as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function edit2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-% --- Executes on button press in radiobutton1.
-function radiobutton1_Callback(hObject, eventdata, handles)
-% hObject    handle to radiobutton1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hint: get(hObject,'Value') returns toggle state of radiobutton1
-state = get(handles.radiobutton1, 'Value')
-set(handles.radiobutton1, 'String', state)
 
 % --- Executes on button press in reset.
 function reset_Callback(hObject, eventdata, handles)
 % hObject    handle to reset (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-cla reset
+cla(handles.axes1, 'reset')
+cla(handles.axes2, 'reset')
 
 
 % --- Executes on button press in button2.
@@ -174,3 +111,51 @@ function button2_Callback(hObject, eventdata, handles)
 file = uigetfile('*.xlsx');
 global A;
 A = xlsread(file);
+set(handles.nomfichier, 'String', file);
+
+
+
+function edit3_Callback(hObject, eventdata, handles)
+% hObject    handle to edit3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit3 as text
+%        str2double(get(hObject,'String')) returns contents of edit3 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in pushbutton2.
+function pushbutton2_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+global A;
+global h;
+global L;
+
+if (~isempty(h))
+    delete(h);
+end
+
+if(isempty(A))   
+    h = msgbox('Veillez selectionner un fichier','Alerte', 'warn');
+else
+    L = str2double(get(handles.edit3, 'String'));
+    axes(handles.axes2)
+    plotalphat(A, L); % Tracage de DL en fonction de la temperature
+  
+end
