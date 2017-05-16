@@ -159,14 +159,13 @@ end
 if(isempty(A))
     h = msgbox('Veillez selectionner un fichier','Alerte', 'warn');
 elseif(isempty(L))
-    h = msgbox('Veuillez inserer la longueur de la tige');
+    h = msgbox('Veuillez inserer la longueur de la tigeel');
 else
     L = str2double(get(handles.edit3, 'String'));
     axes(handles.axes2)
     plotalphat(A, L);
     
 end
-% pts = getpts(handles.axes2)
 
 
 % --- Executes on button press in pushbutton6.
