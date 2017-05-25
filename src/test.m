@@ -51,7 +51,6 @@ function test_OpeningFcn(hObject, eventdata, handles, varargin)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to test (see VARARGIN)
-
 % Choose default command line output for test
 handles.output = hObject;
 
@@ -60,6 +59,7 @@ guidata(hObject, handles);
 
 % UIWAIT makes test wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
+
 
 
 % --- Outputs from this function are returned to the command line.
