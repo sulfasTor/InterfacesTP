@@ -58,10 +58,13 @@ handles.output = hObject;
 guidata(hObject, handles);
 global A;
 A = varargin{1};
-axes(handles.axes1)
-grid on
-axes(handles.axes2)
-grid on
+axes(handles.axes1, 'reset')
+grid
+axes(handles.axes2, 'reset')
+
+
+
+
 % UIWAIT makes test wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
