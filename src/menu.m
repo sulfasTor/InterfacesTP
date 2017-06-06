@@ -84,7 +84,7 @@ try
     set(handles.text3, 'String', file);
     
 catch
-   msgbox('Une erreur est survenu') 
+   msgbox('Une erreur est survenue') 
 end
 
 global A;

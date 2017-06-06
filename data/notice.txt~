@@ -1,0 +1,87 @@
+		     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+			  \HUGE DILATOMETRICS
+
+
+		      \small Moises TORRES-AGUILAR
+		     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+\setlength\parindent{0pt}
+
+Dilatométrics est une interface graphique servant pour les étudiants
+dans le TP Dilatométrie. Il peut être utilisé pendant le TP.
+
+
+1 Features
+══════════
+
+Lecture de fichiers produit par l'interface machine-dilatomètre CaptureStudio
+─────────────────────────────────────────────────────────────────────────────
+
+  Les fichiers lus devront avoir l'extension TXT sinon il faudra les
+  convertir. Ne pas modifier les fichiers produits par le dilatomètre.
+
+
+Traçage des fonctions demandées
+───────────────────────────────
+
+  Il permet de traçer l'allongement en fonction de la température et le
+  coefficient de dilatation moyen en fonction de la température
+
+
+Correction de la dilatation du silice
+─────────────────────────────────────
+
+  Il corrige la dilatation de la barre du dilatomètre à la mesure
+  finale.
+
+
+Identification des points exactes
+─────────────────────────────────
+
+  Le bouton "Quel est ce point ?" permet de trouver les points d'intérêt
+  tel le point Tg, Tf, etc.
+
+
+Capture d'écran des courbes
+───────────────────────────
+
+  Le bouton "Save" permet des faire des captures des courbes. Le
+  résultat est une image en format .jpg.
+
+
+2 Autre
+═══════
+
+Effacer les courbes
+───────────────────
+
+  Le bouton "Reset" réinitialise les courbes
+
+
+Insérer la longueur de la tige
+──────────────────────────────
+
+  Permet d'insérer une valeur de la tige avant de tracer la courbe.
+
+
+3 Installation
+══════════════
+
+  Il y deux moyens. Si l'utilisateur possède une version de Matlab >
+  R2015a il peut lancer l'application en executant le fichier "menu.m".
+  Si l'utilisateur ne possède pas aucune version de Matlab compatible il
+  peut installer l'application en téléchargeant une extension de matlab
+  gratuite.  Pour cela il devra executer le fichier dilato.exe dans le
+  dossier DILATO et suivre les pas d'installation. L'application n'est
+  pas compatible pour Scilab et GNU Octave.
+
+
+4 Questions et Contact
+══════════════════════
+
+  Pour toute doute ou question contacter Moises TORRES à l'addresse
+  moises.torres-aguilar arrobas insa-lyon dot fr
+
+
+  HAPPY TP!

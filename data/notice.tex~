@@ -1,0 +1,75 @@
+% Created 2017-06-06 mar. 12:39
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\usepackage[margin=1in]{geometry}
+\setcounter{secnumdepth}{1}
+\author{\small Moises TORRES-AGUILAR}
+\date{}
+\title{\Huge DILATOMETRICS}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.5.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\setlength\parindent{0pt}
+
+Dilatométrics est une interface graphique servant pour  les étudiants dans le TP Dilatométrie. Il peut être utilisé pendant le TP.
+
+\section{Features}
+\label{sec-1}
+\subsection*{Lecture de fichiers produit par l'interface machine-dilatomètre CaptureStudio}
+\label{sec-1-1}
+Les fichiers lus devront avoir l'extension TXT sinon il faudra les convertir. Ne pas modifier les fichiers produits par le dilatomètre.
+\subsection*{Traçage des fonctions demandées}
+\label{sec-1-2}
+Il permet de traçer l'allongement en fonction de la température et le coefficient de dilatation moyen en fonction de la température
+\subsection*{Correction de la dilatation du silice}
+\label{sec-1-3}
+Il corrige la dilatation de la barre du dilatomètre à la mesure finale.
+\subsection*{Identification des points exactes}
+\label{sec-1-4}
+Le bouton "Quel est ce point ?" permet de trouver les point d'intérêt tel le point Tg, Tf, etc.
+\subsection*{Capture d'écran des courbes}
+\label{sec-1-5}
+Le bouton "Save" permet des faire des captures des courbes. Le résultat est une image en format .jpg.
+
+\section{Autre}
+\label{sec-2}
+\subsection*{Effacer les courbes}
+\label{sec-2-1}
+Le bouton "Reset" réinitialise les courbes
+\subsection*{Insérer la longueur de la tige}
+\label{sec-2-2}
+Permet d'insérer une valeur de la tige avant de tracer la courbe.
+
+\section{Installation}
+\label{sec-3}
+Il y deux moyens. Si l'utilisateur possède une version de Matlab > R2015a il peut lancer l'application en executant le fichier "menu.m".
+Si l'utilisateur ne possède pas aucune version de Matlab compatible il peut installer l'application en téléchargeant une extension de matlab gratuite.
+Pour cela il devra executer le fichier dilato.exe dans le dossier DILATO et suivre les pas d'installation.x
+
+\section{Questions et Contact}
+\label{sec-4}
+Pour toute doute ou question contacter Moises TORRES à l'addresse moises.torres-aguilar arrobas insa-lyon dot fr
+
+
+HAPPY TP!
+% Emacs 24.5.1 (Org mode 8.2.10)
+\end{document}
